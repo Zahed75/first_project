@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title></title>
+  </head>
+  <body>
+      <!-- {% for music in musician%}
+      <h1>{{music.first_name}}</h1>
+      <h3>{{music.last_name}}</h3>
+      <h1>  {{music.instrument}}</h1>
+      {% endfor %}
+        {%  for tst in letter %}
+      <marquee><h1>{{  tst.letter }}</h1></marquee>
+        {{tst.image}}
+
+      {% endfor %} -->
+
+    <table border=1>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Instrument</th>
+    </tr>
+    {% for row in musician %}
+    <tr>
+      <td>{{row.first_name}}</td>
+      <td>{{row.last_name}}</td>
+      <td>{{row.instrument}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    <hr>
+    <table border=1>
+  <tr>
+    <th>Name</th>
+    <th>writter</th>
+    <th>price</th>
+    <th>rating</th>
+    </tr>
+    {% for text in data %}
+    <tr>
+      <td>{{text.name}}</td>
+      <td>{{text.writter}}</td>
+      <td>{{text.price}}</td>
+      <td>{{text.rating}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+  </body>
+</html>
