@@ -7,8 +7,12 @@ def index(request):
     letter=Text.objects.order_by('-id')
     musician_list=Musician.objects.order_by('first_name')
     language=Planguage.objects.order_by('name')
-    diction ={'musician':musician_list,'letter':letter,'data':language} 
+    diction ={'musician':musician_list,'letter':letter,'data':language}
     # for music in musician_list:
     #     print(music.first_name,music.last_name,music.instrument)
     # print(musician_list)
     return render(request,'first_app/index.html',context=diction)
+
+def form(request):
+    diction = {}
+    return render(request,'first_app/form.html',context=diction)
