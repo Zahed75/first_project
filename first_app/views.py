@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from first_app.models import Musician, Album,Text,Planguage
+from first_app import froms
 
 # Create your views here.
 def index(request):
@@ -14,5 +15,6 @@ def index(request):
     return render(request,'first_app/index.html',context=diction)
 
 def form(request):
-    diction = {}
+    new_form = froms.user_form()
+    diction = {'tst_form':new_form}
     return render(request,'first_app/form.html',context=diction)
